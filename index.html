@@ -109,7 +109,9 @@
     .panel-title em { font-style:italic; color:var(--steel-lt); }
     .panel-desc { font-size:15px; line-height:1.85; color:var(--text-soft); max-width:420px; }
     .panel-image-area { height:100%; background:rgba(43,91,138,0.04); display:flex; align-items:center; justify-content:center; }
-    .panel-img-box { width:65%; aspect-ratio:3/4; background:linear-gradient(135deg,var(--sky),var(--lilac)); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(26,34,53,0.35); }
+    .panel-img-box { width:65%; aspect-ratio:3/4; background:linear-gradient(135deg,var(--sky),var(--lilac)); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; position:relative; overflow:hidden; box-shadow: 0 20px 50px rgba(43,91,138,0.15);}
+    .panel-src-img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);}
+    .panel-img-box:hover .panel-src-img {transform: scale(1.05);}
     .h-scroll-progress { position:fixed; bottom:36px; left:50%; transform:translateX(-50%); display:flex; gap:7px; z-index:100; opacity:0; transition:opacity 0.5s; }
     .h-scroll-progress.visible { opacity:1; }
     .progress-dot { width:6px; height:6px; border-radius:3px; background:rgba(26,34,53,0.18); transition:all 0.4s cubic-bezier(0.23,1,0.32,1); }
@@ -142,8 +144,8 @@
     .cc1{background:linear-gradient(135deg,#C0D8F0,#A8C4E0);} .cc2{background:linear-gradient(135deg,#B8D0C8,#A0C0B8);} .cc3{background:linear-gradient(135deg,#D0C8E8,#B8B0D8);} .cc4{background:linear-gradient(135deg,#E8D8C8,#D8C8B8);} .cc5{background:linear-gradient(135deg,#C8D8E8,#B8C8D8);} .cc6{background:linear-gradient(135deg,#D8C8D0,#C8B8C0);} .cc7{background:linear-gradient(135deg,#C8E0D8,#B0D0C8);}
     .client-card-label { position:relative; z-index:2; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.9); font-family:'DM Sans',sans-serif; }
     .client-card-sub { font-size:9px; opacity:0.7; margin-top:3px; letter-spacing:0.1em; }
-    .client-card:nth-child(1){ left:2%; transform:rotate(-24deg); z-index:1; } .client-card:nth-child(2){ left:14%; transform:rotate(-16deg); z-index:2; } .client-card:nth-child(3){ left:27%; transform:rotate(-8deg); z-index:3; } .client-card:nth-child(4){ left:50%; margin-left:-100px; transform:rotate(0deg); z-index:4; } .client-card:nth-child(5){ right:27%; transform:rotate(8deg); z-index:3; } .client-card:nth-child(6){ right:14%; transform:rotate(16deg); z-index:2; } .client-card:nth-child(7){ right:2%; transform:rotate(24deg); z-index:1; }
-    .client-card:nth-child(1):hover{ transform:rotate(-24deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); } .client-card:nth-child(2):hover{ transform:rotate(-16deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); } .client-card:nth-child(3):hover{ transform:rotate(-8deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); } .client-card:nth-child(4):hover{ transform:rotate(0deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); } .client-card:nth-child(5):hover{ transform:rotate(8deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); } .client-card:nth-child(6):hover{ transform:rotate(16deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); } .client-card:nth-child(7):hover{ transform:rotate(24deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); }
+    .client-card:nth-child(1){ left:2%; transform:rotate(-24deg); z-index:1; } .client-card:nth-child(2){ left:14%; transform:rotate(-17deg); z-index:2; } .client-card:nth-child(3){ left:26%; transform:rotate(-10deg); z-index:3; } .client-card:nth-child(4){ left:38%; transform:rotate(-3deg); z-index:4; } .client-card:nth-child(5){ right:38%; transform:rotate(3deg); z-index:4; } .client-card:nth-child(6){ right:26%; transform:rotate(10deg); z-index:3; } .client-card:nth-child(7){ right:14%; transform:rotate(17deg); z-index:2; }.client-card:nth-child(8){ right:2%; transform:rotate(24deg); z-index:1; }
+    .client-card:nth-child(1):hover{ transform:rotate(-24deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; } .client-card:nth-child(2):hover{ transform:rotate(-17deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; } .client-card:nth-child(3):hover{ transform:rotate(-10deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; } .client-card:nth-child(4):hover{ transform:rotate(-3deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; } .client-card:nth-child(5):hover{ transform:rotate(3deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; } .client-card:nth-child(6):hover{ transform:rotate(10deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; } .client-card:nth-child(7):hover{ transform:rotate(17deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; }.client-card:nth-child(8):hover{ transform:rotate(24deg) translateY(-36px) scale(1.06); box-shadow:0 28px 56px rgba(43,91,138,0.18); z-index:10; }
     .clients-cta { margin-top:48px; color:var(--text-soft); font-size:13px; }
 
     /* ── ABOUT SECTION ── */
@@ -155,10 +157,12 @@
     .stat-number span { color:var(--steel); }
     .stat-label { font-size:12px; letter-spacing:0.1em; color:var(--text-soft); margin-top:4px; }
     .about-visual { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .about-photo { background:var(--sky); aspect-ratio:3/4; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(26,34,53,0.3); transition:transform 0.4s cubic-bezier(0.23,1,0.32,1); }
+    .about-photo { background:var(--sky); aspect-ratio:3/4; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(26,34,53,0.3); transition:transform 0.4s cubic-bezier(0.23,1,0.32,1); overflow:hidden; position:relative; }
+    .about-src-img { width:100%; height:100%; object-fit:cover; display:block; }
     .about-photo:hover { transform:scale(1.02); }
     .about-photo:first-child { grid-column:span 2; aspect-ratio:16/9; background:var(--lilac); }
     .about-photo:nth-child(3) { background:var(--mint); }
+    .about-photo { background:var(--sky); aspect-ratio:3/4; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(26,34,53,0.3); transition:transform 0.4s cubic-bezier(0.23,1,0.32,1); overflow:hidden; position:relative; }
 
     /* ── MANIFESTO ── */
     .manifesto { background:var(--text); padding:110px 52px; position:relative; overflow:hidden; }
@@ -176,12 +180,21 @@
     .process-track::-webkit-scrollbar { display:none; }
     .process-card { flex-shrink:0; width:280px; background:var(--bg); border-radius:8px; overflow:hidden; scroll-snap-align:start; transition:transform 0.4s cubic-bezier(0.23,1,0.32,1),box-shadow 0.4s; border:1px solid rgba(43,91,138,0.06); }
     .process-card:hover { transform:translateY(-10px); box-shadow:0 20px 40px rgba(43,91,138,0.1); }
-    .process-swatch { height:140px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; }
+    .process-swatch { height:140px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; position:relative; overflow:hidden; }
     .ps1{background:linear-gradient(135deg,#2B5B8A,#4A80B0,#88B0D8);} .ps2{background:linear-gradient(135deg,#3A7AB5,#5A9AD5,#98C0E8);} .ps3{background:linear-gradient(135deg,#1A4A70,#3A6A90,#6A90B0);} .ps4{background:linear-gradient(135deg,#4A7090,#6A90B0,#90B0C8);}
-    .process-num { font-family:'Bebas Neue',sans-serif; font-size:48px; color:rgba(255,255,255,0.9); line-height:1; }
+    .process-num { font-family:'Bebas Neue',sans-serif; font-size:48px; color:rgba(255,255,255,0.95); line-height:1; position:relative; z-index:3; }
     .process-info { padding:20px; }
     .process-name { font-family:'Playfair Display',serif; font-size:20px; color:var(--text); margin-bottom:6px; }
     .process-desc { font-size:12px; line-height:1.75; color:var(--text-soft); }
+    .process-src-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; transition:transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+    .process-card:hover .process-src-img { transform:scale(1.08); }
+    .process-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(43,91,138,0.1), rgba(26,34,53,0.7)); z-index:2; }
+
+    /* ── RESULTS GRID LOGOS & STATS ── */
+    .client-logo-img { width:100%; height:100%; object-fit:contain; padding:24px; transition:transform 0.4s cubic-bezier(0.23,1,0.32,1), opacity 0.4s; }
+    .result-item:hover .client-logo-img { transform:scale(0.85); opacity:0.15; }
+    .stat-strong { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.05em; font-weight:normal; display:block; }
+    .result-item:nth-child(1) .stat-strong { font-size:42px; } /* Larger stat for the Rive feature box */
 
     /* ── CONTACT / LAUNCH STYLE ── */
     .contact-section { background:linear-gradient(135deg,#E8EEF8,#EDF2FF,#EAF2EE); padding:130px 52px; text-align:center; }
@@ -379,7 +392,7 @@
           <h2 class="panel-title">Not Just an<br><em>Agency</em></h2>
           <p class="panel-desc">Rive Productions is a creative marketing studio born from a real gap in the market — agencies that are either creatively brilliant but strategically shallow, or analytically sharp but soulless. We chose to be both.</p>
         </div>
-        <div class="panel-image-area"><div class="panel-img-box"><div>🎬</div><div>Add Studio Photo</div></div></div>
+        <div class="panel-image-area"><div class="panel-img-box"><img src="assets/founder.png" alt="Founder of Rive Productions" class="panel-src-img"></div></div>
       </div>
     </div>
     <div class="h-scroll-panel hp2">
@@ -390,7 +403,7 @@
           <h2 class="panel-title">Results Over<br><em>Impressions</em></h2>
           <p class="panel-desc">Beautiful content that doesn't move metrics is just art. Every campaign, every post, every website we build is designed with measurable outcomes as the north star — not just aesthetics.</p>
         </div>
-        <div class="panel-image-area"><div class="panel-img-box"><div>📊</div><div>Add Work Photo</div></div></div>
+        <div class="panel-image-area"><div class="panel-img-box"><div>📊</div><div> </div></div></div>
       </div>
     </div>
     <div class="h-scroll-panel hp3">
@@ -401,7 +414,7 @@
           <h2 class="panel-title">Deep<br><em>Partnership</em></h2>
           <p class="panel-desc">We work with a deliberately limited roster of clients. When you partner with Rive Productions, you get genuine strategic engagement — not a junior account manager and a templated deck.</p>
         </div>
-        <div class="panel-image-area"><div class="panel-img-box"><div>🤝</div><div>Add Team Photo</div></div></div>
+        <div class="panel-image-area"><div class="panel-img-box"><div>🤝</div><div> </div></div></div>
       </div>
     </div>
     <div class="h-scroll-panel hp4">
@@ -413,7 +426,7 @@
           <p class="panel-desc">We are the creative and digital backbone behind Rive India — our sister fashion brand. Everything we offer clients, we first built and proved on ourselves. That's the Rive difference.</p>
           <div style="margin-top:36px"><a href="riveindia.html" class="btn-primary" style="display:inline-block;text-align:center">Visit Rive India →</a></div>
         </div>
-        <div class="panel-image-area"><div class="panel-img-box"><div>👗</div><div>Add Brand Photo</div></div></div>
+        <div class="panel-image-area"><div class="panel-img-box"><div>👗</div><div> </div></div></div>
       </div>
     </div>
   </div>
@@ -437,27 +450,27 @@
     <div class="services-track-wrap">
       <div class="services-track" id="servicesTrack">
         <div class="service-card">
-          <div class="service-card-top sc1"><div class="service-card-tag">Core Service</div><div class="service-card-icon">📱</div><div>Add Photo</div></div>
+          <div class="service-card-top sc1"><div class="service-card-tag">Core Service</div><div class="service-card-icon">📱</div><div> </div></div>
           <div class="service-card-info"><div class="service-card-name">Social Media Management</div><p class="service-card-desc">End-to-end management — content calendars, reels, community engagement, and platform-specific strategy across Instagram, LinkedIn, X, and more.</p></div>
         </div>
         <div class="service-card">
-          <div class="service-card-top sc2"><div class="service-card-icon">🎯</div><div>Add Photo</div></div>
+          <div class="service-card-top sc2"><div class="service-card-icon">🎯</div><div> </div></div>
           <div class="service-card-info"><div class="service-card-name">Performance Marketing</div><p class="service-card-desc">Data-driven paid campaigns on Meta & Google. We design, A/B test, and optimise ads that convert — not just impress.</p></div>
         </div>
         <div class="service-card">
-          <div class="service-card-top sc3"><div class="service-card-tag">Popular</div><div class="service-card-icon">🌐</div><div>Add Photo</div></div>
+          <div class="service-card-top sc3"><div class="service-card-tag">Popular</div><div class="service-card-icon">🌐</div><div> </div></div>
           <div class="service-card-info"><div class="service-card-name">Web Design & Development</div><p class="service-card-desc">Bespoke websites, landing pages, and e-commerce stores — responsive, fast, and beautifully crafted to convert.</p></div>
         </div>
         <div class="service-card">
-          <div class="service-card-top sc4"><div class="service-card-icon">🎬</div><div>Add Photo</div></div>
+          <div class="service-card-top sc4"><div class="service-card-icon">🎬</div><div> </div></div>
           <div class="service-card-info"><div class="service-card-name">Content & Video Production</div><p class="service-card-desc">Scroll-stopping reels, brand films, photography, and motion graphics. Cinematic quality for every platform.</p></div>
         </div>
         <div class="service-card">
-          <div class="service-card-top sc5"><div class="service-card-tag">New</div><div class="service-card-icon">🏷️</div><div>Add Photo</div></div>
+          <div class="service-card-top sc5"><div class="service-card-tag">New</div><div class="service-card-icon">🏷️</div><div> </div></div>
           <div class="service-card-info"><div class="service-card-name">Brand Identity & Strategy</div><p class="service-card-desc">Logo design, visual identity systems, tone-of-voice, and brand positioning — the DNA that makes your brand unforgettable.</p></div>
         </div>
         <div class="service-card">
-          <div class="service-card-top sc6"><div class="service-card-icon">📊</div><div>Add Photo</div></div>
+          <div class="service-card-top sc6"><div class="service-card-icon">📊</div><div> </div></div>
           <div class="service-card-info"><div class="service-card-name">Analytics & Growth Consulting</div><p class="service-card-desc">Monthly reporting, growth audits, funnel analysis, and hands-on strategic consultation to scale your brand faster.</p></div>
         </div>
       </div>
@@ -472,43 +485,57 @@
     <h2 class="section-title">Brands We've <em>Grown</em></h2>
   </div>
   <div class="clients-fan reveal">
+    
     <div class="client-card">
-      <div class="client-card-inner cc1">
+      <div class="client-card-inner" style="background-color: #b3c6d3; background-image: url('assets/clients/rive.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <div><div class="client-card-label">Rive India</div><div class="client-card-sub">Fashion · 340% IG growth</div></div>
       </div>
     </div>
+    
     <div class="client-card">
-      <div class="client-card-inner cc2">
-        <div><div class="client-card-label">Mumbai Bites</div><div class="client-card-sub">F&B · 3 outlet launches</div></div>
+      <div class="client-card-inner" style="background-color: #ffffff; background-image: url('assets/clients/auto.png'); background-repeat: no-repeat; background-position: center 35%; background-size: 75%;">
+        <div><div class="client-card-label">Autoptions</div><div class="client-card-sub">Automotive · 4.8x ROAS</div></div>
       </div>
     </div>
+    
     <div class="client-card">
-      <div class="client-card-inner cc3">
-        <div><div class="client-card-label">PixelPort Tech</div><div class="client-card-sub">SaaS · 4.8x ROAS</div></div>
+      <div class="client-card-inner" style="background-color: #ffffff; background-image: url('assets/clients/epl.png'); background-repeat: no-repeat; background-position: center 40%; background-size: 80%;">
+        <div><div class="client-card-label">Eva Path Lab</div><div class="client-card-sub">Healthcare · 1.2M Views</div></div>
       </div>
     </div>
+    
     <div class="client-card">
-      <div class="client-card-inner cc4">
-        <div><div class="client-card-label">Aura Wellness</div><div class="client-card-sub">Wellness · 67% booking lift</div></div>
+      <div class="client-card-inner" style="background-color: #3a3a3a; background-image: url('assets/clients/gb.png'); background-repeat: no-repeat; background-position: center 30%; background-size: 80%;">
+        <div><div class="client-card-label">Global Bricks</div><div class="client-card-sub">Real Estate · 67% Bookings Up</div></div>
       </div>
     </div>
+    
     <div class="client-card">
-      <div class="client-card-inner cc5">
-        <div><div class="client-card-label">The Chai Bar</div><div class="client-card-sub">Café · 1.2M reel views</div></div>
+      <div class="client-card-inner" style="background-color: #ffffff; background-image: url('assets/clients/isl.png'); background-repeat: no-repeat; background-position: center 40%; background-size: 80%;">
+        <div><div class="client-card-label">Inspiring Seniors</div><div class="client-card-sub">NGO · 220+ Leads</div></div>
       </div>
     </div>
+    
     <div class="client-card">
-      <div class="client-card-inner cc6">
-        <div><div class="client-card-label">NestNavi Realty</div><div class="client-card-sub">Real Estate · 220+ leads</div></div>
+      <div class="client-card-inner" style="background-color: #ffffff; background-image: url('assets/clients/k.png'); background-repeat: no-repeat; background-position: center 40%; background-size: 60%;">
+        <div><div class="client-card-label">Kala Community</div><div class="client-card-sub">Community · 2.1x Revenue</div></div>
       </div>
     </div>
+    
     <div class="client-card">
-      <div class="client-card-inner cc7">
-        <div><div class="client-card-label">Kala Threads</div><div class="client-card-sub">Handloom · 2.1x revenue</div></div>
+      <div class="client-card-inner" style="background-color: #0a0a0a; background-image: url('assets/clients/mgm.png'); background-repeat: no-repeat; background-position: center 40%; background-size: 75%;">
+        <div><div class="client-card-label">Madhu Gupta</div><div class="client-card-sub">Beauty · 18K Followers</div></div>
       </div>
     </div>
+
+    <div class="client-card">
+      <div class="client-card-inner" style="background-color: #ffffff; background-image: url('assets/clients/rnr.png'); background-repeat: no-repeat; background-position: center 40%; background-size: 80%;">
+        <div><div class="client-card-label">Room & Roof</div><div class="client-card-sub">Real Estate · 3x Subs</div></div>
+      </div>
+    </div>
+
   </div>
-  <p class="clients-cta reveal">Hover each card to explore · <a href="#contact-section" style="color:var(--steel);text-decoration:none;">Work with us →</a></p>
+  <p class="clients-cta reveal" style="margin-top: 64px;">Hover each card to explore · <a href="#contact-section" style="color:var(--steel);text-decoration:none;">Work with us →</a></p>
 </section>
 
 <section class="about-section" id="about-section">
@@ -516,18 +543,17 @@
     <div>
       <p class="section-label reveal">About Us</p>
       <h2 class="section-title reveal">A Studio That Thinks<br>Like a <em>Business</em></h2>
-      <p class="about-body reveal">Founded in Gurugram by a team of marketers, designers, and storytellers — Rive Productions is the creative and digital arm of the Rive family. We've built our own brands from scratch before asking anyone else to trust us with theirs.</p>
+      <p class="about-body reveal">Founded in Gurugram by a team of marketers, designers,engineers, and storytellers — Rive Productions is the creative and digital arm of the Rive family. We've built our own brands from scratch before asking anyone else to trust us with theirs.</p>
       <div class="culture-stats reveal">
-        <div><div class="stat-number">28<span>+</span></div><div class="stat-label">Clients Served</div></div>
-        <div><div class="stat-number">3.2<span>M+</span></div><div class="stat-label">Reach Generated</div></div>
-        <div><div class="stat-number">140<span>+</span></div><div class="stat-label">Campaigns Launched</div></div>
-        <div><div class="stat-number">24<span>hr</span></div><div class="stat-label">Average Response Time</div></div>
+        <div><div class="stat-number">6<span>+</span></div><div class="stat-label">Years of experience</div></div>
+        <div><div class="stat-number">5<span>+</span></div><div class="stat-label">Cities Reached</div></div>
+        <div><div class="stat-number">1<span>hr</span></div><div class="stat-label">Average Response Time</div></div>
       </div>
     </div>
     <div class="about-visual reveal">
-      <div class="about-photo">📸 Add Team Photo</div>
-      <div class="about-photo">📸 Add Studio Photo</div>
-      <div class="about-photo">📸 Add Work Photo</div>
+      <div class="about-photo"><img src="assets/team.jpeg" alt="The Rive Productions Team" class="about-src-img"></div>
+      <div class="about-photo"><img src="assets/studio.jpg.avif" alt="Our Gurugram Studio" class="about-src-img"></div>
+      <div class="about-photo"><img src="assets/working.jpeg" alt="Behind the scenes" class="about-src-img"></div>
     </div>
   </div>
 </section>
@@ -549,23 +575,43 @@
   </div>
   <div class="process-track" id="processTrack">
     <div class="process-card">
-      <div class="process-swatch ps1"><div class="process-num">01</div></div>
+      <div class="process-swatch">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop" alt="Discovery Phase" class="process-src-img">
+        <div class="process-overlay"></div>
+        <div class="process-num">01</div>
+      </div>
       <div class="process-info"><div class="process-name">Discovery</div><p class="process-desc">Deep-dive into your brand, audience, goals, and competitors. No templates — only context-driven insight.</p></div>
     </div>
     <div class="process-card">
-      <div class="process-swatch ps2"><div class="process-num">02</div></div>
+      <div class="process-swatch">
+        <img src="assets/strat.jpeg" alt="Strategy Planning" class="process-src-img">
+        <div class="process-overlay"></div>
+        <div class="process-num">02</div>
+      </div>
       <div class="process-info"><div class="process-name">Strategy</div><p class="process-desc">Tailored roadmap: channel mix, content pillars, campaign architecture, and timeline.</p></div>
     </div>
     <div class="process-card">
-      <div class="process-swatch ps3"><div class="process-num">03</div></div>
+      <div class="process-swatch">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Execution and Creation" class="process-src-img">
+        <div class="process-overlay"></div>
+        <div class="process-num">03</div>
+      </div>
       <div class="process-info"><div class="process-name">Execution</div><p class="process-desc">We build and launch — designing, producing, publishing, and managing every moving part.</p></div>
     </div>
     <div class="process-card">
-      <div class="process-swatch ps4"><div class="process-num">04</div></div>
+      <div class="process-swatch">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Optimisation and Analytics" class="process-src-img">
+        <div class="process-overlay"></div>
+        <div class="process-num">04</div>
+      </div>
       <div class="process-info"><div class="process-name">Optimise</div><p class="process-desc">Transparent reporting, constant iteration, and strategic reviews that keep improving month after month.</p></div>
     </div>
     <div class="process-card">
-      <div class="process-swatch" style="background:linear-gradient(135deg,#5580A0,#7A9AB8,#A0B8C8);height:140px;display:flex;align-items:center;justify-content:center;"><div class="process-num">05</div></div>
+      <div class="process-swatch">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Scaling Operations" class="process-src-img">
+        <div class="process-overlay"></div>
+        <div class="process-num">05</div>
+      </div>
       <div class="process-info"><div class="process-name">Scale</div><p class="process-desc">As results compound, we expand your reach — new channels, bigger budgets, bolder creative.</p></div>
     </div>
   </div>
@@ -577,14 +623,63 @@
     <a href="#clients-section" class="btn-ghost" style="align-self:flex-end">All Clients <span class="arr"></span></a>
   </div>
   <div class="results-grid reveal">
-    <div class="result-item"><div class="result-inner ri1"><div class="result-num">340%</div><div>IG Growth</div></div><div class="result-overlay"><span>Rive India</span></div></div>
-    <div class="result-item"><div class="result-inner ri2"><div class="result-num">4.8x</div><div>ROAS</div></div><div class="result-overlay"><span>PixelPort</span></div></div>
-    <div class="result-item"><div class="result-inner ri3"><div class="result-num">1.2M</div><div>Views</div></div><div class="result-overlay"><span>Chai Bar</span></div></div>
-    <div class="result-item"><div class="result-inner ri4"><div class="result-num">67%</div><div>Bookings Up</div></div><div class="result-overlay"><span>Aura</span></div></div>
-    <div class="result-item"><div class="result-inner ri5"><div class="result-num">220+</div><div>Leads</div></div><div class="result-overlay"><span>NestNavi</span></div></div>
-    <div class="result-item"><div class="result-inner ri6"><div class="result-num">2.1x</div><div>Revenue</div></div><div class="result-overlay"><span>Kala Threads</span></div></div>
-    <div class="result-item"><div class="result-inner ri1"><div class="result-num">18K</div><div>Followers</div></div><div class="result-overlay"><span>Craftedge</span></div></div>
-    <div class="result-item"><div class="result-inner ri2"><div class="result-num">3x</div><div>Subscribers</div></div><div class="result-overlay"><span>VerdaFarms</span></div></div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#b3c6d3;">
+        <img src="assets/clients/rive.png" alt="Rive India" class="client-logo-img" style="padding:0;">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">340%</strong>IG Growth</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#ffffff;">
+        <img src="assets/clients/auto.png" alt="Autoptions" class="client-logo-img">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">4.8x</strong>ROAS</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#ffffff;">
+        <img src="assets/clients/epl.png" alt="Eva Path Lab" class="client-logo-img">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">1.2M</strong>Views</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#3a3a3a;">
+        <img src="assets/clients/gb.png" alt="Global Bricks" class="client-logo-img" style="padding:0;">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">67%</strong>Bookings Up</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#ffffff;">
+        <img src="assets/clients/isl.png" alt="Inspiring Seniors Foundation" class="client-logo-img">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">220+</strong>Leads</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#ffffff;">
+        <img src="assets/clients/k.png" alt="K" class="client-logo-img">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">2.1x</strong>Revenue</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#0a0a0a;">
+        <img src="assets/clients/mgm.png" alt="Madhu Gupta Makeovers" class="client-logo-img">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">18K</strong>Followers</span></div>
+    </div>
+    
+    <div class="result-item">
+      <div class="result-inner" style="background:#ffffff;">
+        <img src="assets/clients/rnr.png" alt="Room & Roof" class="client-logo-img">
+      </div>
+      <div class="result-overlay"><span style="text-align:center;"><strong class="stat-strong">3x</strong>Subscribers</span></div>
+    </div>
+
   </div>
 </section>
 
