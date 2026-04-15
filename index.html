@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RIVE PRODUCTIONS — Marketing & Creative Agency</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Rive India Production — Creative Storytelling & Content Agency</title>
+    <meta name="description" content="Rive India Production helps brands create, narrate & elevate through storytelling, reels & content that builds visibility, trust & real audience engagement." />
+  
+    <meta property="og:title" content="Rive India Production — Creative Storytelling & Content Agency" />
+    <meta property="og:description" content="Rive India Production helps brands create, narrate & elevate through storytelling, reels & content that builds visibility, trust & real audience engagement." />
+    <meta property="og:type" content="website" />
+    <!--
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:image" content="https://yourwebsite.com/images/social-preview.jpg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    
   <style>
     /* ── VARIABLES ── */
     :root { --bg:#F2F5FA; --bg2:#E8EEF8; --bg3:#EAF2EE; --bg4:#F5F0EA; --cotton:#EDF2FF; --warm:#FAF8F3; --text:#1A2235; --text-soft:rgba(26,34,53,0.5); --steel:#2B5B8A; --steel-lt:#3A7AB5; --steel-xs:#D0DFF0; --sky:#B8D0E8; --mint:#B0D8CC; --sand:#E8DCC8; --lilac:#C8D0E8; --blush:#E0C8D0; --accent:#2B5B8A; --accent2:#5B8AB0; }
@@ -1001,6 +1014,25 @@ document.addEventListener('mousemove',e=>{
   if(b2) b2.style.transform=`translate(${-x}px,${-y}px)`;
   if(b3) b3.style.transform=`translate(${x*0.5}px,${-y*0.5}px)`;
 });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      // Prevent the default browser behavior (which adds the # to the URL)
+      e.preventDefault();
+
+      // Find the target section using the href attribute
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      // Scroll smoothly to the target section
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth', // This gives it a nice gliding effect
+          block: 'start'      // Aligns the section to the top of the screen
+        });
+      }
+    });
+  });
 </script>
 </body>
 </html>
