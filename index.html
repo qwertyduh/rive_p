@@ -10,6 +10,16 @@
     <meta property="og:title" content="Rive India Production — Creative Storytelling & Content Agency" />
     <meta property="og:description" content="Rive India Production helps brands create, narrate & elevate through storytelling, reels & content that builds visibility, trust & real audience engagement." />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rive India Production" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Rive India Production",
+        "url": "https://www.riveindiaproduction.com/"
+      }
+    </script>
     <!--
     <meta property="og:url" content="https://yourwebsite.com" />
     <meta property="og:image" content="https://yourwebsite.com/images/social-preview.jpg" />
@@ -18,6 +28,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
   <style>
     /* ── VARIABLES ── */
@@ -112,11 +124,12 @@
     .sig-tagline.visible { opacity:1; }
 
     /* ── H-SCROLL PANELS ── */
-    .h-scroll-container { height:100vh; position:relative; overflow:hidden; width:100vw; }
-    .h-scroll-inner { display:flex; height:100%; width:max-content; transition:transform 0.85s cubic-bezier(0.77,0,0.175,1); }
-    .h-scroll-panel { width:100vw; height:100vh; flex-shrink:0; display:flex; align-items:center; position:relative; overflow:hidden; }
+    /* The window */
+    .h-scroll-container { width: 100%; overflow: hidden; }
+    .h-scroll-inner { display: flex; width: max-content; }
+    .h-scroll-panel { position: relative; width: 100vw; min-height: 100vh; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
     .hp1{background:var(--cotton);} .hp2{background:linear-gradient(135deg,#EAF5F0,#E0EAF5);} .hp3{background:linear-gradient(135deg,#F0EAF5,#E8EEF8);} .hp4{background:linear-gradient(135deg,#F5F0E8,#EEF2F8);}
-    .panel-content { display:grid; grid-template-columns:1fr 1fr; width:100%; height:100%; align-items:center; }
+    .panel-content { position: relative; z-index: 1; display:flex; gap: 40px; grid-template-columns:1fr 1fr; width:100%; height:100%; align-items:center; }
     .panel-text { padding:0 80px; }
     .panel-number { font-family:'Bebas Neue',sans-serif; font-size:160px; line-height:1; color:rgba(26,34,53,0.04); position:absolute; left:40px; bottom:20px; pointer-events:none; }
     .panel-tag { font-size:10px; letter-spacing:0.38em; text-transform:uppercase; color:var(--steel); margin-bottom:18px; }
@@ -1046,6 +1059,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
       }
     });
+  });
+
+  const swiper = new Swiper('.h-scroll-container', {
+    // Tell Swiper to use your custom HTML classes
+    wrapperClass: 'h-scroll-inner',
+    slideClass: 'h-scroll-panel',
+    
+    direction: 'horizontal',
+
+    // --- THE MAGIC SWIPE SETTINGS ---
+    shortSwipes: true,      // Enables quick, fast flicks
+    longSwipesRatio: 0.15,  // Only requires a 15% drag to trigger the next slide (Default is 0.5)
+    speed: 600,             // How fast it transitions to the next panel (in ms)
+    resistanceRatio: 0.6,   // Adds a nice rubber-band friction feel at the very first and last panels
+    
+    // Optional: Add this if you want laptop trackpads to work smoothly too
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+    },
   });
 </script>
 </body>
